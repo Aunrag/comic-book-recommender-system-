@@ -62,7 +62,9 @@ nltk.download('punkt')
 
 ```python
     recommend('Omniscient Reader')
-    output
+```
+  Output
+```
         similar comics to [9    Omniscient Reader
         Name: title, dtype: object] are:
         recommended comic:  Omniscient Reader (Novel)
