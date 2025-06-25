@@ -1,12 +1,12 @@
-## 📘 Manga and Manhwa Recommender System
+## Manga and Manhwa Recommender System
 
-### 🧠 Project Overview
+### Project Overview
 
 This project is a content-based recommender system tailored for manga and manhwa enthusiasts. It utilizes metadata like tags and descriptions to find similar comics using natural language processing and unsupervised machine learning techniques. The core idea is to provide top-k recommendations based on textual similarity using cosine distance.
 
 ---
 
-### ⚙️ Project Workflow
+###  Project Workflow
 
 1. **Data Cleaning and Preprocessing**
 
@@ -30,7 +30,7 @@ This project is a content-based recommender system tailored for manga and manhwa
 
 ---
 
-### 🧪 ML / NLP Techniques Used
+### ML / NLP Techniques Used
 
 * **Tokenization & Stemming**: Using NLTK's `PorterStemmer` for feature normalization.
 * **Count Vectorization**: For converting text to numerical vectors.
@@ -38,7 +38,7 @@ This project is a content-based recommender system tailored for manga and manhwa
 
 ---
 
-### 📦 Dependencies
+### Dependencies
 ```bash
 pip install pandas scikit-learn nltk
 ```
@@ -49,7 +49,7 @@ nltk.download('punkt')
 
 ---
 
-### ▶️ How to Run
+### How to Run
 
 1. Clone the repository or download the notebook.
 2. Place your `comic_data.csv` file in the same directory.
@@ -58,7 +58,7 @@ nltk.download('punkt')
 
 ---
 
-### 🧾 Example Output
+### Example Output
 
 ```python
 recommend("Solo Leveling")
