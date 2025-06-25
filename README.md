@@ -61,9 +61,19 @@ nltk.download('punkt')
 ### Example Output
 
 ```python
-recommend("Solo Leveling")
-# Output:
-# ['The Beginning After the End', 'Tomb Raider King', 'Ranker Who Lives A Second Time', ...]
+    recommend('Omniscient Reader')
+    output
+        similar comics to [9    Omniscient Reader
+        Name: title, dtype: object] are:
+        recommended comic:  Omniscient Reader (Novel)
+        recommended comic:  Past Lives of the Thunder God
+        recommended comic:  Stairs
+        recommended comic:  The Fighting Monster
+        recommended comic:  Shaman (Won-Pyo HONG)
+        recommended comic:  Shi ni Modori, Subete wo Sukuu Tame ni Saikyou e to Itaru
+        recommended comic:  I Become A Villain In My Novel
+        recommended comic:  My Lady, Please Become My Heroine!
+        recommended comic:  Ouroboros Record: Circus of Oubeniel (Light Novel   )
 ```
 
 ---
