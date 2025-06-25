@@ -39,15 +39,9 @@ This project is a content-based recommender system tailored for manga and manhwa
 ---
 
 ### 📦 Dependencies
-
-Make sure to install the following dependencies before running the notebook:
-
 ```bash
 pip install pandas scikit-learn nltk
 ```
-
-Also, don’t forget to download NLTK resources if not already available:
-
 ```python
 import nltk
 nltk.download('punkt')
@@ -74,20 +68,3 @@ recommend("Solo Leveling")
 
 ---
 
-## ✅ Code Review Summary
-
-### ✔️ Strengths
-
-* Good use of preprocessing (e.g. stemming, removing noise).
-* Uses a simple but effective ML model for recommendations.
-* Well-structured transformation pipeline.
-* Clean handling of missing and duplicate data.
-
-### ❗ Suggestions
-
-* Add exception handling if the input title is not in the dataset.
-* Consider using TF-IDF instead of CountVectorizer for more nuanced similarity.
-* Visualize similarity using a heatmap or dimensionality reduction (e.g. PCA, t-SNE).
-* Modularize code into functions or classes for scalability.
-
-Would you like me to convert this into a `README.md` file or a downloadable `.txt`/`.md` version?
