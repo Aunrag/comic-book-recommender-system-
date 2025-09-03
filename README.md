@@ -1,4 +1,4 @@
-## Manga and Manhwa Recommender System
+## Comic Book Recommender System
 
 ### Project Overview
 
