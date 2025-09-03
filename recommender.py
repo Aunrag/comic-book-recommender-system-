@@ -48,12 +48,15 @@ from sklearn.feature_extraction.text import CountVectorizer
 cv=CountVectorizer(max_features=10000,stop_words="english")
 
 vector=cv.fit_transform(df['tags'])
+import joblib
+joblib.dump(vector, "vector_matrix.pkl")
 
 
 
-model=NearestNeighbors(n_neighbors=10, metric='cosine')
+model=NearestNeighbors(n_neighbors=20, metric='cosine')
 
 model.fit(vector)
+joblib.dump(model, "knn_model.pkl")
 
 distance,indices=model.kneighbors(vector[2])
 
@@ -62,15 +65,20 @@ df['title_lower'] = df['title'].str.lower()
 def recommend(x):
     x_lower = x.lower()
     if x_lower not in df['title_lower'].values:
-        print(f"'{x}' is not in the dataset.")
-        return
+        return(f"'{x}' is not in the dataset.")
+        #return
     i=df[df['title_lower']==x_lower].index
     distance,indices=model.kneighbors(vector[i])
-    print(f"similar comics to [{df.iloc[i]['title']}] are:")
-    for j in indices[0]:
+    #print(f"similar comics to [{df.iloc[i]['title']}] are:")
+    rec_titles  = [
+        df.iloc[j]["title"]
+        for j in indices[0] if j != idx            # skip the query itself
+    ]
+    return rec_titles[:20]
+    '''for j in indices[0]:
         if j!=i:
             print("recommended comic: ",df.iloc[j]['title'])
     print()
-
+    '''
 
 

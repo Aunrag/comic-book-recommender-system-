@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manga Recommender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Manga / Manhwa Recommender</h1>
+
+    <div class="input-group">
+      <input id="title" placeholder="Enter manga title" autofocus />
+      <button id="go">Recommend</button>
+    </div>
+
+    <ul id="results"></ul>
+  </div>
+
+<script>
+document.getElementById("go").addEventListener("click", getRecommendations);
+document.getElementById("title").addEventListener("keypress", e => {
+  if (e.key === "Enter") getRecommendations();
+});
+
+function getRecommendations() {
+  const titleInput = document.getElementById("title");
+  const title = titleInput.value.trim();
+  const list  = document.getElementById("results");
+  list.innerHTML = "";
+
+  if (!title) return;
+
+  fetch("/recommend", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ title })
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.recommendations.length === 0) {
+      list.innerHTML = "<li>No similar titles found.</li>";
+      return;
+    }
+    data.recommendations.forEach(t => {
+      const li = document.createElement("li");
+      li.textContent = t;
+      list.appendChild(li);
+    });
+  })
+  .catch(err => {
+    list.innerHTML = `<li style="color:red;">${err}</li>`;
+  });
+}
+</script>
+</body>
+</html>
