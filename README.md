@@ -40,7 +40,7 @@ A simple web interface is added using **Flask**, allowing users to input a comic
 
 #### 📷 Web App UI Screenshot
 
-![Web App Screenshot](static/images/flask_ui.jpg)
+![Web App Screenshot](static/flask_ui.jpg)
 
 > Make sure the image is located at `static/images/flask_ui.png`. Adjust the path if needed.
 
