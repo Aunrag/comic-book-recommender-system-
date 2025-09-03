@@ -33,6 +33,38 @@ This project is a content-based recommender system tailored for manga and manhwa
 - **Nearest Neighbors Algorithm**: Scikit-learn implementation to find similar comics based on cosine distance.
 
 ---
+### Dependencies
+```bash
+pip install pandas scikit-learn nltk
+```
+```python
+import nltk
+nltk.download('punkt')
+```
+---
+
+### Example Output
+
+```python
+recommend('Omniscient Reader')
+```
+   Output
+```
+similar comics to [9    Omniscient Reader
+Name: title, dtype: object] are:
+    recommended comic:  Omniscient Reader (Novel)
+    recommended comic:  Past Lives of the Thunder God
+    recommended comic:  Stairs
+    recommended comic:  The Fighting Monster
+    recommended comic:  Shaman (Won-Pyo HONG)
+    recommended comic:  Shi ni Modori, Subete wo Sukuu Tame ni Saikyou e to Itaru
+    recommended comic:  I Become A Villain In My Novel
+    recommended comic:  My Lady, Please Become My Heroine!
+    recommended comic:  Ouroboros Record: Circus of Oubeniel (Light Novel   )
+```
+---
+
+---
 
 ### Flask Web App Integration
 
@@ -69,32 +101,4 @@ A simple web interface is added using **Flask**, allowing users to input a comic
 
 ---
 
-### Example Output
-
-```python
-recommend('Omniscient Reader')
-```
-   Output
-```
-similar comics to [9    Omniscient Reader
-Name: title, dtype: object] are:
-    recommended comic:  Omniscient Reader (Novel)
-    recommended comic:  Past Lives of the Thunder God
-    recommended comic:  Stairs
-    recommended comic:  The Fighting Monster
-    recommended comic:  Shaman (Won-Pyo HONG)
-    recommended comic:  Shi ni Modori, Subete wo Sukuu Tame ni Saikyou e to Itaru
-    recommended comic:  I Become A Villain In My Novel
-    recommended comic:  My Lady, Please Become My Heroine!
-    recommended comic:  Ouroboros Record: Circus of Oubeniel (Light Novel   )
-```
----
-### Dependencies
-```bash
-pip install pandas scikit-learn nltk
-```
-```python
-import nltk
-nltk.download('punkt')
-```
 
